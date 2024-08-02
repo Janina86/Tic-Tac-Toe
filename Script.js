@@ -27,7 +27,7 @@ function updateCellValue() {
         if (checkForWinner()) {
             endGame(`${currentPlayer} WINS!`);
         } else if (boardState.every(cell => cell)) {
-            endGame('It\'s a Tie!');
+            endGame("It's a Tie!");
         } else {
             if (currentPlayer === 'X') {
                 currentPlayer = 'O';
@@ -66,5 +66,7 @@ function resetGame() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => cell.innerText = '');
 }
+
+document.getElementById('play-again').addEventListener('click', resetGame);
 
 window.onload = initializeGame;
